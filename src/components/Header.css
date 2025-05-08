@@ -1,0 +1,41 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--accent);
+  height: 75px;
+  color: var(--background);
+  padding-inline: 20px;
+  font-size: 25px;
+  font-family: "Fredoka", sans-serif;
+  box-shadow: var(--box-shadow);
+}
+.logo-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-menu button,
+.header-home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out 0s;
+}
+.logo-menu button:hover,
+.header-home-link:hover {
+  filter: drop-shadow(0 0 5px var(--shadow-header));
+}
+.logo-menu button {
+  font-size: 20px;
+}
+
+@media (min-width: 600px) {
+  .main-header {
+    justify-content: space-around;
+    padding-inline: 50px;
+  }
+  .logo-menu {
+    gap: 20px;
+  }
+}

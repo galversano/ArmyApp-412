@@ -1,0 +1,40 @@
+.sidebar-container {
+  height: 100%;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: end;
+}
+.menu-close {
+  align-self: flex-start;
+  font-size: 20px;
+  padding: 15px;
+  width: 100%;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  padding: 10px 15px;
+}
+.sidebar-container a {
+  transition: all 0.2s ease-in-out 0s;
+}
+.sidebar-container a:hover {
+  color: var(--secondary);
+  filter: drop-shadow(5px 5px 8px var(--shadow-sidebar));
+}
+
+@media (min-width: 600px) {
+  .sidebar-container {
+    width: 200px;
+  }
+  .nav-link {
+    padding-inline: 22px;
+  }
+}
