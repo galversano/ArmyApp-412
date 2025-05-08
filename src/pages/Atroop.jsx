@@ -15,11 +15,11 @@ export default function Atroop() {
               <option value="" disabled>
                 -- Choose a color --
               </option>
-              <option value="חפק">Red</option>
-              <option value="מערבי">Orange</option>
-              <option value="מזרחי">Yellow</option>
-              <option value="יזומה">Green</option>
-              <option value="כיתת כוננות">Blue</option>
+              <option value="חפק">חפק</option>
+              <option value="מערבי">מערבי</option>
+              <option value="מזרחי">מזרחי</option>
+              <option value="יזומה">יזומה</option>
+              <option value="כיתת כוננות">כיתת כוננות</option>
               
             </select>
           </div>
