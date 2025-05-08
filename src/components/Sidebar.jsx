@@ -13,7 +13,7 @@ export default function SidebarContainer({ setSidebar }) {
         <AiOutlineHome />
       </NavLink>
       <NavLink
-        to="about"
+        to="atroop"
         className="nav-link"
         onClick={() => setSidebar(false)}
       >

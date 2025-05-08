@@ -39,3 +39,9 @@
     gap: 20px;
   }
 }
+@media (hover: none) {
+  .logo-menu button:hover,
+  .header-home-link:hover {
+    filter: none;
+  }
+}

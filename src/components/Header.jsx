@@ -8,6 +8,7 @@ export default function Header({ handleSidebar }) {
 
   const troop = () => {
     const path = location.pathname;
+    console.log(path);
     if (path.includes("atroop")) {
       return <p>סוללה א</p>;
     }
