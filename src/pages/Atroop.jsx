@@ -6,7 +6,7 @@ export default function Atroop() {
     <section className="troop-container atroop-container">
       <h1>סוללה א</h1>
       <Tabs>
-        <div className="section-1" title="סיורים">
+        <div className="section-1" title="כוחות">
           <div className="input-container">
             <label htmlFor="force" className="label">
               כוח:
