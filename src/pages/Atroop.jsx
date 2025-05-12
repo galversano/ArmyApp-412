@@ -80,7 +80,7 @@ export default function Atroop() {
       })
       .join("\n");
 
-    const text = `מיקומי כוחות-שכן 🏘️↗️:\n${dynamicText}`;
+    const text = `מיקומי כוחות שכן :\n${dynamicText}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
   };
 
@@ -219,7 +219,7 @@ export default function Atroop() {
               <option value="1142">1142</option>
               <option value="1657">1657</option>
               <option value="1861">1861</option>
-              <option value="1375">1357</option>
+              <option value="1375">1375</option>
               <option value="2568">2568</option>
               <option value="2571">2571</option>
               <option value="863">863</option>
@@ -247,7 +247,7 @@ export default function Atroop() {
               <option value="1142">1142</option>
               <option value="1657">1657</option>
               <option value="1861">1861</option>
-              <option value="1375">1357</option>
+              <option value="1375">1375</option>
               <option value="2568">2568</option>
               <option value="2571">2571</option>
               <option value="863">863</option>
