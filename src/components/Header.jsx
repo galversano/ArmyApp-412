@@ -26,7 +26,7 @@ export default function Header({ handleSidebar }) {
       <div className="select-troop">{troop()}</div>
       <div className="logo-menu">
         <Link to="/" className="header-home-link">
-          412#
+          412
         </Link>
         <button onClick={() => handleSidebar(true)}>
           <FaBars />
