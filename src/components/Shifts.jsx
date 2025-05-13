@@ -8,8 +8,8 @@ export default function Shifts() {
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  const API_KEY = "AIzaSyBn0qtHSUkP2J7qjppSEF-bGhgWGdl-vz0";
-  const SPREADSHEET_ID = "17kjPZ9DH9tDQNUwZuO85IysOCA0MKZAgBcIJdaCUl8U";
+  const API_KEY = "Your_api_key";
+  const SPREADSHEET_ID = "your_spreadshhet_id";
 
   // Create a cache to prevent unnecessary requests
   const [dataCache, setDataCache] = useState({
