@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import Shifts from "../components/Shifts";
 import Tabs from "../components/Tabs";
 import "./Atroop.css";
@@ -332,6 +333,7 @@ export default function Atroop() {
 
           <button className="add-button" onClick={sendSection1WhatsApp}>
             שלח בוואטסאפ
+            <FaWhatsapp />
           </button>
         </div>
 
@@ -416,6 +418,7 @@ export default function Atroop() {
 
           <button className="add-button" onClick={sendSection2WhatsApp}>
             שלח בוואטסאפ
+            <FaWhatsapp />
           </button>
         </div>
         {/* <div className="section-3" title="חמל">
@@ -508,6 +511,7 @@ export default function Atroop() {
           </button>
           <button className="add-button" onClick={sendSection3WhatsApp}>
             שלח בוואטסאפ
+            <FaWhatsapp />
           </button>
         </div>
         <div className="section-3" title="מפקדי משימות">

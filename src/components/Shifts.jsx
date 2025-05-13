@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import "./Shifts.css";
 import phoneNumbers from "../phoneNumbers";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Shifts() {
   const [shiftData, setShiftData] = useState({});
@@ -8,8 +9,8 @@ export default function Shifts() {
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  const API_KEY = "Your_api_key";
-  const SPREADSHEET_ID = "your_spreadshhet_id";
+  const API_KEY = "YOUR_API_KEY";
+  const SPREADSHEET_ID = "SPREADSHEET_ID";
 
   // Create a cache to prevent unnecessary requests
   const [dataCache, setDataCache] = useState({
@@ -311,6 +312,7 @@ export default function Shifts() {
                     className="add-button"
                     onClick={() => sendMessage(value)}
                   >
+                    <FaWhatsapp />
                     שלח וואטסאפ
                   </button>
                 </div>
@@ -329,7 +331,7 @@ export default function Shifts() {
               onClick={() => fetchShiftData(true)}
               disabled={loading}
             >
-              Refresh Data
+              רענן מידע
             </button>
           </div>
         </div>
