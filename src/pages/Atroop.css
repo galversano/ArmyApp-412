@@ -62,8 +62,6 @@
 }
 @media (hover: none) {
   .add-button:hover {
-    color: inherit;
-    background-color: inherit;
     filter: none;
   }
 }

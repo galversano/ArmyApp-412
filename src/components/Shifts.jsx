@@ -9,9 +9,10 @@ export default function Shifts() {
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  const API_KEY = "YOUR_API_KEY";
-  const SPREADSHEET_ID = "SPREADSHEET_ID";
-
+  // const API_KEY = "YOUR_API_KEY";
+  // const SPREADSHEET_ID = "SPREADSHEET_ID";
+  const API_KEY = "AIzaSyBn0qtHSUkP2J7qjppSEF-bGhgWGdl-vz0";
+  const SPREADSHEET_ID = "17kjPZ9DH9tDQNUwZuO85IysOCA0MKZAgBcIJdaCUl8U";
   // Create a cache to prevent unnecessary requests
   const [dataCache, setDataCache] = useState({
     data: null,
@@ -310,7 +311,7 @@ export default function Shifts() {
                   <p>{value}</p>
                   <button
                     className="send-btn"
-                    onClick={() => sendMessage(value)}
+                    onClick={() => sendMessage("גל ורסנו")}
                   >
                     <FaWhatsapp />
                     שלח וואטסאפ

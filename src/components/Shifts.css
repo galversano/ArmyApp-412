@@ -62,8 +62,6 @@
 @media (hover: none) {
   .send-btn:hover,
   .refresh-btn:hover {
-    color: inherit;
-    background-color: inherit;
     filter: none;
   }
 }
