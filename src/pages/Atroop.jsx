@@ -1,3 +1,4 @@
+import Shifts from "../components/Shifts";
 import Tabs from "../components/Tabs";
 import "./Atroop.css";
 import React, { useState } from "react";
@@ -494,6 +495,9 @@ export default function Atroop() {
           <button className="add-button" onClick={sendSection3WhatsApp}>
             שלח בוואטסאפ
           </button>
+        </div>
+        <div className="section-3" title="מפקדי משימות">
+          <Shifts />
         </div>
       </Tabs>
     </section>

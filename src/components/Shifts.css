@@ -1,0 +1,52 @@
+.shift-data {
+  width: 100%;
+  margin-top: 8px;
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--primary);
+}
+.commander-info {
+  width: 100%;
+  max-width: 980px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: all 0.3s ease-in-out;
+  gap: 30px;
+  padding-inline: 4px;
+}
+.object-entry {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  gap: 5px;
+  align-items: center;
+}
+.send-btn,
+.refresh-btn {
+  border: none;
+  background-color: var(--secondary);
+  box-shadow: var(--box-shadow);
+  color: var(--background);
+}
+.send-btn:hover,
+.refresh-btn:hover {
+  filter: drop-shadow(0 0 7px var(--accent));
+}
+.shift-commander {
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+}
+
+@media (hover: none) {
+  .send-btn:hover,
+  .refresh-btn:hover {
+    color: inherit;
+    background-color: inherit;
+    filter: none;
+  }
+}
