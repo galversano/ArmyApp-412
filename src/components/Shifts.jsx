@@ -309,7 +309,7 @@ export default function Shifts() {
                   <p>{value}</p>
                   <button
                     className="add-button"
-                    onClick={() => sendMessage("גל ורסנו")}
+                    onClick={() => sendMessage(value)}
                   >
                     שלח וואטסאפ
                   </button>
