@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import "./Shifts.css";
+import phoneNumbers from "../phoneNumbers";
 
 export default function Shifts() {
   const [shiftData, setShiftData] = useState({});
@@ -285,6 +286,12 @@ export default function Shifts() {
 
   function sendMessage(person) {
     console.log(`sending message to ${person}`);
+    phoneNumbers.find((elem) => {
+      if (elem.name === person) {
+        window.open(`https://wa.me/${elem.phoneNumber}`);
+        return;
+      }
+    });
   }
 
   return (
@@ -302,7 +309,7 @@ export default function Shifts() {
                   <p>{value}</p>
                   <button
                     className="add-button"
-                    onClick={() => sendMessage(value)}
+                    onClick={() => sendMessage("גל ורסנו")}
                   >
                     שלח וואטסאפ
                   </button>
@@ -317,15 +324,14 @@ export default function Shifts() {
             {lastUpdated && (
               <p>Last updated: {new Date(lastUpdated).toLocaleString()}</p>
             )}
+            <button
+              className="add-button"
+              onClick={() => fetchShiftData(true)}
+              disabled={loading}
+            >
+              Refresh Data
+            </button>
           </div>
-
-          <button
-            className="add-button"
-            onClick={() => fetchShiftData(true)}
-            disabled={loading}
-          >
-            Refresh Data
-          </button>
         </div>
       )}
     </div>

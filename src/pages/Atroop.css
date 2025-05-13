@@ -52,3 +52,14 @@
   cursor: pointer;
   transition: background-color 0.2s;
 }
+
+.add-button:hover {
+  filter: drop-shadow(0 0 7px var(--accent));
+}
+@media (hover: none) {
+  .add-button:hover {
+    color: inherit;
+    background-color: inherit;
+    filter: none;
+  }
+}

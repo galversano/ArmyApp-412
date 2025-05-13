@@ -150,7 +150,9 @@ export default function Atroop() {
               value={nightvision}
               onChange={(e) => setNightvision(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="61404">61404</option>
               <option value="111963">111963</option>
               <option value="2036639">2036639</option>
@@ -170,7 +172,9 @@ export default function Atroop() {
               value={binoculars}
               onChange={(e) => setBinoculars(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="971201146">971201146</option>
               <option value="97120032">97120032</option>
               <option value="98070383">98070383</option>
@@ -190,7 +194,9 @@ export default function Atroop() {
               value={launcher}
               onChange={(e) => setLauncher(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="156642">156642</option>
               <option value="98439">98439</option>
               <option value="156642">156642</option>
@@ -215,7 +221,9 @@ export default function Atroop() {
               value={lionnet}
               onChange={(e) => setLionnet(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="1814">1814</option>
               <option value="1142">1142</option>
               <option value="1657">1657</option>
@@ -243,7 +251,9 @@ export default function Atroop() {
               value={lionnet_1}
               onChange={(e) => setLioNnet(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="1814">1814</option>
               <option value="1142">1142</option>
               <option value="1657">1657</option>
@@ -370,7 +380,9 @@ export default function Atroop() {
               value={positionBinoculars}
               onChange={(e) => setPositionBinoculars(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="971201146">971201146</option>
               <option value="97120032">97120032</option>
               <option value="98070383">98070383</option>
@@ -390,7 +402,9 @@ export default function Atroop() {
               value={positionNightvision}
               onChange={(e) => setPositionNightvision(e.target.value)}
             >
-              <option value="" disabled></option>
+              <option value="" disabled>
+                -----
+              </option>
               <option value="61404">61404</option>
               <option value="111963">111963</option>
               <option value="20036639">20036639</option>
