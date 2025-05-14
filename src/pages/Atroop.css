@@ -1,8 +1,9 @@
 .section-1,
 .section-2,
-.section-3 {
+.section-3,
+.section-4 {
   width: 100%;
-  padding-block: 10px;
+  padding-block: 5px;
   padding-inline: 25px;
   display: flex;
   flex-direction: column;
@@ -55,6 +56,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-top: 3px;
 }
 
 .add-button:hover {

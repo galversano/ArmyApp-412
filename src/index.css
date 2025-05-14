@@ -94,3 +94,6 @@ body {
     color: inherit;
   }
 }
+select:hover {
+  cursor: pointer;
+}

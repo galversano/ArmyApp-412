@@ -11,12 +11,12 @@
 }
 .commander-info {
   width: 100%;
-  max-width: 980px;
+  max-width: 950px;
   margin-bottom: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   transition: all 0.3s ease-in-out;
-  gap: 30px;
+  gap: 20px;
   padding-inline: 4px;
 }
 .object-entry {
@@ -70,6 +70,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
   }
 }
 @media (min-width: 420px) {
@@ -87,5 +88,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
   }
 }
