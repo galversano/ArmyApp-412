@@ -76,3 +76,21 @@
 .add-button:hover {
   filter: drop-shadow(0 0 7px var(--accent));
 }
+
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .label {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 5px;
+  }
+
+  .input-field,
+  .textarea-field {
+    max-width: 100%;
+  }
+}
