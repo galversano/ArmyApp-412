@@ -144,18 +144,6 @@ export default function Atroop() {
               <option value="" hidden>
                 -----
               </option>
-              <option value="1814">1814</option>
-              <option value="1142">1142</option>
-              <option value="1657">1657</option>
-              <option value="1861">1861</option>
-              <option value="1375">1375</option>
-              <option value="2568">2568</option>
-              <option value="2571">2571</option>
-              <option value="863">863</option>
-              <option value="1826">1826</option>
-              <option value="2599">2599</option>
-              <option value="1120">1120</option>
-              <option value="2561">2561</option>
               <option value="2134">2134</option>
               <option value="1701">1701</option>
               <option value="אין ליונט">אין ליונט</option>
@@ -176,18 +164,6 @@ export default function Atroop() {
               <option value="" hidden>
                 -----
               </option>
-              <option value="1814">1814</option>
-              <option value="1142">1142</option>
-              <option value="1657">1657</option>
-              <option value="1861">1861</option>
-              <option value="1375">1375</option>
-              <option value="2568">2568</option>
-              <option value="2571">2571</option>
-              <option value="863">863</option>
-              <option value="1826">1826</option>
-              <option value="2599">2599</option>
-              <option value="1120">1120</option>
-              <option value="2561">2561</option>
               <option value="2134">2134</option>
               <option value="1701">1701</option>
               <option value="אין ליונט">אין ליונט</option>
