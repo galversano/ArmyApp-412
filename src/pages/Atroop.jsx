@@ -156,7 +156,9 @@ export default function Atroop() {
               <option value="2599">2599</option>
               <option value="1120">1120</option>
               <option value="2561">2561</option>
-              <option value="אין">אין</option>
+              <option value="2134">2134</option>
+              <option value="1701">1701</option>
+              <option value="אין ליונט">אין ליונט</option>
             </select>
           </div>
 
@@ -186,7 +188,9 @@ export default function Atroop() {
               <option value="2599">2599</option>
               <option value="1120">1120</option>
               <option value="2561">2561</option>
-              <option value="אין">אין</option>
+              <option value="2134">2134</option>
+              <option value="1701">1701</option>
+              <option value="אין ליונט">אין ליונט</option>
             </select>
           </div>
 
