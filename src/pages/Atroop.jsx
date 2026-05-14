@@ -10,7 +10,7 @@ export default function Atroop() {
   כוח: ${data.force}
   צ' אמרל: ${data.nightvision}
   צ' משקפת: ${data.binoculars}
-  צ' מטול: ${data.launcher}
+  צ' רינגו: ${data.ringo}
   צ' ליונט 1: ${data.lionnet}
   צ' ליונט 2: ${data.lionet2}
    גז: ${data.gas}
@@ -103,13 +103,13 @@ export default function Atroop() {
             </select>
           </div>
           <div className="input-container">
-            <label htmlFor="launcher" className="label" title="בחירת מטול">
-              צ' מטול:
+            <label htmlFor="ringo" className="label" title="בחירת רינגו">
+              צ' רינגו:
             </label>
             <select
-              name="launcher"
-              id="launcher"
-              title="בחירת מטול"
+              name="ringo"
+              id="ringo"
+              title="בחירת רינגו"
               className="input-field"
               required
             >
@@ -118,16 +118,17 @@ export default function Atroop() {
               </option>
               <option value="156642">156642</option>
               <option value="98439">98439</option>
-              <option value="156642">156642</option>
               <option value="103018">103018</option>
               <option value="1272">1272</option>
               <option value="1275">1275</option>
               <option value="1861">1861</option>
               <option value="1033">1033</option>
               <option value="1096">1096</option>
-              <option value="אין מטול">אין מטול</option>
+              <option value="1195">1195</option>
+              <option value="אין רינגו">אין רינגו</option>
             </select>
           </div>
+
 
           <div className="input-container">
             <label htmlFor="lionet" className="label" title="בחירת ליונט 1">
