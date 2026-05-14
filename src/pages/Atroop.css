@@ -17,27 +17,25 @@
   align-items: center;
   direction: rtl;
   gap: 10px;
-}
-.input-container-1 {
-  display: flex;
-  align-items: center;
-  direction: rtl;
-  gap: 10px;
+  flex-wrap: nowrap; /* Force side-by-side */
+  width: 100%;
+  max-width: 400px;
 }
 .input-field {
-  width: 150px; /* Reduced width to fit mobile side-by-side */
-  min-width: 150px;
+  flex: 1; /* Allow input to shrink to fit alongside the label */
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: "Varela Round", sans-serif;
   font-size: 16px;
   box-shadow: var(--input-box-shadow);
+  min-width: 0; /* Important to allow shrinking */
 }
 .label {
-  width: 80px; /* Reduced width to fit mobile side-by-side */
-  min-width: 80px;
+  width: 90px;
+  min-width: 90px;
   text-align: right;
+  white-space: nowrap; /* Prevent label from wrapping */
 }
 
 .add-button {
