@@ -19,7 +19,7 @@ ${data.forces_missions}
 *כוחות נוספים :*
 ${data.additional_forces}
 
-*עבודה ולוגסטיקה :*
+*עבודות ולוגיסטיקה בגזרה:*
 ${data.logistics}
 
 *מודיעין והתרעות:*
@@ -75,7 +75,7 @@ ${data.checkposts}`;
         </div>
 
         <div className="input-container">
-          <label htmlFor="logistics" className="label">עבודה ולוגסטיקה בגזרה:</label>
+          <label htmlFor="logistics" className="label">עבודות ולוגיסטיקה בגזרה:</label>
           <textarea name="logistics" id="logistics" className="textarea-field" placeholder="לוגיסטיקה ועבודה..." />
         </div>
 
