@@ -116,14 +116,6 @@ export default function Atroop() {
               <option value="" hidden>
                 -----
               </option>
-              <option value="156642">156642</option>
-              <option value="98439">98439</option>
-              <option value="103018">103018</option>
-              <option value="1272">1272</option>
-              <option value="1275">1275</option>
-              <option value="1861">1861</option>
-              <option value="1033">1033</option>
-              <option value="1096">1096</option>
               <option value="1195">1195</option>
               <option value="אין רינגו">אין רינגו</option>
             </select>
