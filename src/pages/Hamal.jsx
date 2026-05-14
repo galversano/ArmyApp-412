@@ -5,30 +5,30 @@ import "./Hamal.css";
 export default function Hamal() {
   function sendHamalWhatsApp(formData) {
     const data = Object.fromEntries(formData);
-    const text = `דיווח חמ"ל:
-תאריך: ${data.date}
-יוצא: ${data.outgoing}
-נכנס: ${data.incoming}
+    const text = `*דיווח חמ"ל:*
+*תאריך:* ${data.date}
+*יוצא:* ${data.outgoing}
+*נכנס:* ${data.incoming}
 
-אירועים אחרונים :
+*אירועים אחרונים :*
 ${data.recent_events}
 
-כוחות ומשימות:
+*כוחות ומשימות:*
 ${data.forces_missions}
 
-כוחות נוספים :
+*כוחות נוספים :*
 ${data.additional_forces}
 
-עבודה ולוגסטיקה :
+*עבודה ולוגסטיקה :*
 ${data.logistics}
 
-מודיעין והתרעות:
+*מודיעין והתרעות:*
 ${data.intelligence}
 
-משימות:
+*משימות:*
 ${data.missions}
 
-צקפוסטים וצימודים במשמרת:
+*צקפוסטים וצימודים במשמרת:*
 ${data.checkposts}`;
 
     window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text)}`);
@@ -40,14 +40,14 @@ ${data.checkposts}`;
       <form action={sendHamalWhatsApp} className="hamal-form">
         <div className="input-container">
           <label htmlFor="date" className="label">תאריך:</label>
-          <input 
-            type="text" 
-            name="date" 
-            id="date" 
-            className="input-field" 
-            required 
+          <input
+            type="text"
+            name="date"
+            id="date"
+            className="input-field"
+            required
             defaultValue={new Date().toLocaleDateString("he-IL")}
-            placeholder="הזן תאריך" 
+            placeholder="הזן תאריך"
           />
         </div>
         <div className="input-container">
