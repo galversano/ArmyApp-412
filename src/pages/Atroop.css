@@ -25,18 +25,18 @@
   gap: 10px;
 }
 .input-field {
-  flex: 1;
-  max-width: 150px; /* or whatever you want */
-  min-width: 150px;
-  padding: 4px;
-  border: none;
+  width: 200px; /* Fixed width for all input boxes */
+  min-width: 200px;
+  padding: 6px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-family: "Varela Round", sans-serif;
   font-size: 16px;
   box-shadow: var(--input-box-shadow);
 }
 .label {
-  min-width: 80px; /* same width for all labels */
+  width: 100px; /* Fixed width for all labels to ensure alignment */
+  min-width: 100px;
   text-align: right;
 }
 
