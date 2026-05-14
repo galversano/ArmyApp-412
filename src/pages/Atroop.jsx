@@ -18,7 +18,7 @@ export default function Atroop() {
   תאורה: ${data.light}
   גומי:${data.rubber}`;
 
-    window.open(`https://wa.me/972545008614?text=${encodeURIComponent(text)}`);
+    window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text)}`);
   }
 
   return (
