@@ -54,11 +54,8 @@ export default function Atroop() {
               <option value="" hidden>
                 בחירת הכוח
               </option>
-              <option value="חפק">חפק</option>
-              <option value="מערבי">מערבי</option>
-              <option value="מזרחי">מזרחי</option>
-              <option value="יזומה">יזומה</option>
               <option value="כיתת כוננות">כיתת כוננות</option>
+              <option value="סיור">סיור</option>
             </select>
           </div>
           <div className="input-container">
