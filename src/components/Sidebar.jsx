@@ -2,6 +2,7 @@ import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import "./Sidebar.css";
 import { GiArtilleryShell, GiRallyTheTroops } from "react-icons/gi";
+import { HiOutlineSpeakerphone } from "react-icons/hi";
 
 export default function SidebarContainer({ setSidebar }) {
   return (
@@ -20,6 +21,14 @@ export default function SidebarContainer({ setSidebar }) {
       >
         <span>סוללה א</span>
         <GiRallyTheTroops />
+      </NavLink>
+      <NavLink
+        to="hamal"
+        className="nav-link"
+        onClick={() => setSidebar(false)}
+      >
+        <span>חמ"ל</span>
+        <HiOutlineSpeakerphone />
       </NavLink>
     </div>
   );
