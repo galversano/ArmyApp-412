@@ -31,7 +31,7 @@ ${data.missions}
 צקפוסטים וצימודים במשמרת:
 ${data.checkposts}`;
 
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+    window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text)}`);
   }
 
   return (
