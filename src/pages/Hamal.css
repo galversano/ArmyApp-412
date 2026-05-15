@@ -77,6 +77,69 @@
   filter: drop-shadow(0 0 7px var(--accent));
 }
 
+.checkposts-subsection {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkposts-subsection h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: var(--accent);
+  text-align: right;
+}
+
+.checkpost-row {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  direction: rtl; /* Ensure RTL visual order */
+}
+
+.checkpost-input {
+  flex: 1;
+  padding: 8px;
+  background: var(--input-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.add-row-btn {
+  align-self: flex-end;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.delete-row-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
   .input-container {
     flex-direction: column;
@@ -92,5 +155,22 @@
   .input-field,
   .textarea-field {
     max-width: 100%;
+  }
+
+  .checkpost-row {
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px;
+    border-radius: 5px;
+    gap: 8px;
+  }
+  
+  .checkpost-input {
+    width: calc(50% - 4px);
+    flex: none;
+  }
+  
+  .delete-row-btn {
+    width: 100%;
   }
 }

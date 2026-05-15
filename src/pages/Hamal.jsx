@@ -1,8 +1,29 @@
-import React from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaWhatsapp, FaPlus, FaTrash } from "react-icons/fa";
 import "./Hamal.css";
 
 export default function Hamal() {
+  const [checkpostsList, setCheckpostsList] = useState([{ force: "", location: "", hours: "", pairings: "" }]);
+
+  const addCheckpostRow = () => {
+    setCheckpostsList([...checkpostsList, { force: "", location: "", hours: "", pairings: "" }]);
+  };
+
+  const removeCheckpostRow = (index) => {
+    if (checkpostsList.length > 1) {
+      const updated = checkpostsList.filter((_, i) => i !== index);
+      setCheckpostsList(updated);
+    } else {
+      setCheckpostsList([{ force: "", location: "", hours: "", pairings: "" }]);
+    }
+  };
+
+  const updateCheckpostRow = (index, field, value) => {
+    const updated = [...checkpostsList];
+    updated[index][field] = value;
+    setCheckpostsList(updated);
+  };
+
   function sendHamalWhatsApp(formData) {
     const data = Object.fromEntries(formData);
     
@@ -17,7 +38,16 @@ export default function Hamal() {
     if (data.logistics) text += `\n*עבודות ולוגיסטיקה בגזרה:*\n${data.logistics}\n`;
     if (data.intelligence) text += `\n*מודיעין והתרעות:*\n${data.intelligence}\n`;
     if (data.missions) text += `\n*משימות:*\n${data.missions}\n`;
-    if (data.checkposts) text += `\n*צקפוסטים וצימודים במשמרת:*\n${data.checkposts}\n`;
+    
+    // Format checkposts subsection
+    const formattedCheckposts = checkpostsList
+      .filter(cp => cp.force || cp.location || cp.hours || cp.pairings)
+      .map(cp => `${cp.force};${cp.location}:${cp.hours}:${cp.pairings}`)
+      .join("\n");
+      
+    if (formattedCheckposts) {
+      text += `\n*צקפוסטים וצימודים במשמרת:*\n${formattedCheckposts}\n`;
+    }
 
     window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text.trim())}`);
   }
@@ -63,8 +93,6 @@ export default function Hamal() {
           <textarea name="recent_events" id="recent_events" className="textarea-field" placeholder="תאר אירועים..." />
         </div>
 
-
-
         <div className="input-container">
           <label htmlFor="additional_forces" className="label">כוחות נוספים בגזרה:</label>
           <textarea name="additional_forces" id="additional_forces" className="textarea-field" placeholder="פרט כוחות נוספים..." />
@@ -85,9 +113,46 @@ export default function Hamal() {
           <textarea name="missions" id="missions" className="textarea-field" placeholder="פירוט משימות..." />
         </div>
 
-        <div className="input-container">
-          <label htmlFor="checkposts" className="label">צקפוסטים וצימודים:</label>
-          <textarea name="checkposts" id="checkposts" className="textarea-field" placeholder="צקפוסטים וצימודים..." />
+        <div className="checkposts-subsection">
+          <h3>צקפוסטים וצימודים</h3>
+          {checkpostsList.map((cp, index) => (
+            <div key={index} className="checkpost-row">
+              <input 
+                type="text" 
+                placeholder="כוח" 
+                value={cp.force} 
+                onChange={(e) => updateCheckpostRow(index, "force", e.target.value)} 
+                className="checkpost-input"
+              />
+              <input 
+                type="text" 
+                placeholder="מיקום" 
+                value={cp.location} 
+                onChange={(e) => updateCheckpostRow(index, "location", e.target.value)} 
+                className="checkpost-input"
+              />
+              <input 
+                type="text" 
+                placeholder="שעות" 
+                value={cp.hours} 
+                onChange={(e) => updateCheckpostRow(index, "hours", e.target.value)} 
+                className="checkpost-input"
+              />
+              <input 
+                type="text" 
+                placeholder="צימודים" 
+                value={cp.pairings} 
+                onChange={(e) => updateCheckpostRow(index, "pairings", e.target.value)} 
+                className="checkpost-input"
+              />
+              <button type="button" onClick={() => removeCheckpostRow(index)} className="delete-row-btn">
+                <FaTrash />
+              </button>
+            </div>
+          ))}
+          <button type="button" onClick={addCheckpostRow} className="add-row-btn">
+            <FaPlus /> הוסף שורה
+          </button>
         </div>
 
         <button className="add-button">
