@@ -158,19 +158,22 @@
   }
 
   .checkpost-row {
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Force single line */
     background: rgba(255, 255, 255, 0.02);
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    gap: 8px;
+    gap: 3px;
   }
   
   .checkpost-input {
-    width: calc(50% - 4px);
-    flex: none;
+    flex: 1;
+    min-width: 0;
+    padding: 5px 2px;
+    font-size: 12px; /* Smaller font for mobile fit */
   }
   
   .delete-row-btn {
-    width: 100%;
+    width: auto;
+    padding: 5px;
   }
 }
