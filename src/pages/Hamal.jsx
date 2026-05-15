@@ -42,7 +42,7 @@ export default function Hamal() {
     // Format checkposts subsection
     const formattedCheckposts = checkpostsList
       .filter(cp => cp.force || cp.location || cp.hours || cp.pairings)
-      .map(cp => `${cp.force};${cp.location}:${cp.hours}:${cp.pairings}`)
+      .map(cp => `${cp.force};${cp.location};${cp.hours};${cp.pairings}`)
       .join("\n");
       
     if (formattedCheckposts) {
