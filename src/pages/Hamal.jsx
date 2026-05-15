@@ -12,7 +12,6 @@ export default function Hamal() {
     if (data.incoming) text += `*נכנס:* ${data.incoming}\n`;
     
     if (data.recent_events) text += `\n*אירועים אחרונים :*\n${data.recent_events}\n`;
-    if (data.forces_missions) text += `\n*כוחות ומשימות:*\n${data.forces_missions}\n`;
     if (data.additional_forces) text += `\n*כוחות נוספים :*\n${data.additional_forces}\n`;
     if (data.logistics) text += `\n*עבודות ולוגיסטיקה בגזרה:*\n${data.logistics}\n`;
     if (data.intelligence) text += `\n*מודיעין והתרעות:*\n${data.intelligence}\n`;
@@ -52,10 +51,7 @@ export default function Hamal() {
           <textarea name="recent_events" id="recent_events" className="textarea-field" placeholder="תאר אירועים..." />
         </div>
 
-        <div className="input-container">
-          <label htmlFor="forces_missions" className="label">כוחות ומשימות:</label>
-          <textarea name="forces_missions" id="forces_missions" className="textarea-field" placeholder="פרט כוחות..." />
-        </div>
+
 
         <div className="input-container">
           <label htmlFor="additional_forces" className="label">כוחות נוספים בגזרה:</label>
