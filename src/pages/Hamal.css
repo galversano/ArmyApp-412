@@ -105,10 +105,10 @@
 .checkpost-input {
   flex: 1;
   padding: 8px;
-  background: var(--input-bg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: white; /* Light background for black text */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  color: white;
+  color: black; /* Black text as requested */
   font-size: 14px;
   min-width: 0;
 }
