@@ -99,7 +99,7 @@ ${g.intelligence}
 `),g.missions&&(m+=`
 *משימות:*
 ${g.missions}
-`);const v=u.filter(S=>S.force||S.location||S.hours||S.pairings).map(S=>`${S.force};${S.location}:${S.hours}:${S.pairings}`).join(`
+`);const v=u.filter(S=>S.force||S.location||S.hours||S.pairings).map(S=>`${S.force};${S.location};${S.hours};${S.pairings}`).join(`
 `);v&&(m+=`
 *צקפוסטים וצימודים במשמרת:*
 ${v}
