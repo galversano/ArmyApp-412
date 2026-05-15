@@ -10,6 +10,7 @@ export default function Hamal() {
     if (data.date) text += `*תאריך:* ${data.date}\n`;
     if (data.outgoing) text += `*יוצא:* ${data.outgoing}\n`;
     if (data.incoming) text += `*נכנס:* ${data.incoming}\n`;
+    if (data.shift) text += `*משמרת:* ${data.shift}\n`;
     
     if (data.recent_events) text += `\n*אירועים אחרונים :*\n${data.recent_events}\n`;
     if (data.additional_forces) text += `\n*כוחות נוספים :*\n${data.additional_forces}\n`;
@@ -44,6 +45,17 @@ export default function Hamal() {
         <div className="input-container">
           <label htmlFor="incoming" className="label">נכנס:</label>
           <input type="text" name="incoming" id="incoming" className="input-field" required placeholder="מי הנכנס?" />
+        </div>
+
+        <div className="input-container">
+          <label htmlFor="shift" className="label">משמרת:</label>
+          <select name="shift" id="shift" className="input-field" required>
+            <option value="" hidden>בחר משמרת</option>
+            <option value="בוקר">בוקר</option>
+            <option value="צהריים">צהריים</option>
+            <option value="לילה">לילה</option>
+            <option value="יומי">יומי</option>
+          </select>
         </div>
 
         <div className="input-container">
