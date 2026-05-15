@@ -5,20 +5,21 @@ import React from "react";
 export default function Atroop() {
   function sendSection1WhatsApp(formData) {
     const data = Object.fromEntries(formData);
-    const text = `סוללה א - כוחות:
-  שם המפקד: ${data.name}
-  כוח: ${data.force}
-  צ' אמרל: ${data.nightvision}
-  צ' משקפת: ${data.binoculars}
-  צ' רינגו: ${data.ringo}
-  צ' ליונט 1: ${data.lionnet}
-  צ' ליונט 2: ${data.lionet2}
-   גז: ${data.gas}
-  הלם:${data.helem}
-  תאורה: ${data.light}
-  גומי:${data.rubber}`;
+    
+    let text = `*סוללה א - כוחות:*\n`;
+    if (data.name) text += `  *שם המפקד:* ${data.name}\n`;
+    if (data.force) text += `  *כוח:* ${data.force}\n`;
+    if (data.nightvision && data.nightvision !== "-----") text += `  *צ' אמרל:* ${data.nightvision}\n`;
+    if (data.binoculars && data.binoculars !== "-----") text += `  *צ' משקפת:* ${data.binoculars}\n`;
+    if (data.ringo && data.ringo !== "-----") text += `  *צ' רינגו:* ${data.ringo}\n`;
+    if (data.lionnet && data.lionnet !== "-----") text += `  *צ' ליונט 1:* ${data.lionnet}\n`;
+    if (data.lionet2 && data.lionet2 !== "-----") text += `  *צ' ליונט 2:* ${data.lionet2}\n`;
+    if (data.gas) text += `  *גז:* ${data.gas}\n`;
+    if (data.helem) text += `  *הלם:* ${data.helem}\n`;
+    if (data.light) text += `  *תאורה:* ${data.light}\n`;
+    if (data.rubber) text += `  *גומי:* ${data.rubber}\n`;
 
-    window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text)}`);
+    window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text.trim())}`);
   }
 
   return (

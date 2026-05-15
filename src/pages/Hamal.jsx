@@ -5,33 +5,21 @@ import "./Hamal.css";
 export default function Hamal() {
   function sendHamalWhatsApp(formData) {
     const data = Object.fromEntries(formData);
-    const text = `*דיווח חמ"ל:*
-*תאריך:* ${data.date}
-*יוצא:* ${data.outgoing}
-*נכנס:* ${data.incoming}
+    
+    let text = `*דיווח חמ"ל:*\n`;
+    if (data.date) text += `*תאריך:* ${data.date}\n`;
+    if (data.outgoing) text += `*יוצא:* ${data.outgoing}\n`;
+    if (data.incoming) text += `*נכנס:* ${data.incoming}\n`;
+    
+    if (data.recent_events) text += `\n*אירועים אחרונים :*\n${data.recent_events}\n`;
+    if (data.forces_missions) text += `\n*כוחות ומשימות:*\n${data.forces_missions}\n`;
+    if (data.additional_forces) text += `\n*כוחות נוספים :*\n${data.additional_forces}\n`;
+    if (data.logistics) text += `\n*עבודות ולוגיסטיקה בגזרה:*\n${data.logistics}\n`;
+    if (data.intelligence) text += `\n*מודיעין והתרעות:*\n${data.intelligence}\n`;
+    if (data.missions) text += `\n*משימות:*\n${data.missions}\n`;
+    if (data.checkposts) text += `\n*צקפוסטים וצימודים במשמרת:*\n${data.checkposts}\n`;
 
-*אירועים אחרונים :*
-${data.recent_events}
-
-*כוחות ומשימות:*
-${data.forces_missions}
-
-*כוחות נוספים :*
-${data.additional_forces}
-
-*עבודות ולוגיסטיקה בגזרה:*
-${data.logistics}
-
-*מודיעין והתרעות:*
-${data.intelligence}
-
-*משימות:*
-${data.missions}
-
-*צקפוסטים וצימודים במשמרת:*
-${data.checkposts}`;
-
-    window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text)}`);
+    window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text.trim())}`);
   }
 
   return (
