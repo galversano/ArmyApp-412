@@ -14,7 +14,7 @@ export default function Atroop() {
     if (data.ringo && data.ringo !== "-----") text += `  *צ' רינגו:* ${data.ringo}\n`;
     if (data.lionnet && data.lionnet !== "-----") text += `  *צ' ליונט 1:* ${data.lionnet}\n`;
     if (data.lionet2 && data.lionet2 !== "-----") text += `  *צ' ליונט 2:* ${data.lionet2}\n`;
-    if (data.gas_maduga) text += `  *גז מדוגה:* ${data.gas_maduga}\n`;
+    if (data.gas_maducha) text += `  *גז מדוכה:* ${data.gas_maducha}\n`;
     if (data.pctol_gas) text += `  *פצטול גז:* ${data.pctol_gas}\n`;
     if (data.helem) text += `  *הלם:* ${data.helem}\n`;
     if (data.light) text += `  *תאורה:* ${data.light}\n`;
@@ -166,14 +166,14 @@ export default function Atroop() {
           </div>
 
           <div className="input-container">
-            <label htmlFor="gas_maduga" className="label" title="גז מדוגה">
-              גז מדוגה:
+            <label htmlFor="gas_maducha" className="label" title="גז מדוכה">
+              גז מדוכה:
             </label>
             <input
               type="text"
-              name="gas_maduga"
-              title="גז מדוגה"
-              id="gas_maduga"
+              name="gas_maducha"
+              title="גז מדוכה"
+              id="gas_maducha"
               placeholder=""
               className="input-field"
               required
