@@ -19,6 +19,8 @@ export default function Atroop() {
     if (data.helem) text += `  *הלם:* ${data.helem}\n`;
     if (data.light) text += `  *תאורה:* ${data.light}\n`;
     if (data.rubber) text += `  *גומי:* ${data.rubber}\n`;
+    if (data.stretcher && data.stretcher !== "-----") text += `  *אלונקה:* ${data.stretcher}\n`;
+    if (data.jerrycans && data.jerrycans !== "-----") text += `  *ג'ריקנים:* ${data.jerrycans}\n`;
 
     window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text.trim())}`);
   }
@@ -232,6 +234,45 @@ export default function Atroop() {
               className="input-field"
               required
             />
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="stretcher" className="label" title="אלונקה">
+              אלונקה:
+            </label>
+            <select
+              name="stretcher"
+              id="stretcher"
+              title="אלונקה"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="יש">יש</option>
+              <option value="אין">אין</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="jerrycans" className="label" title="ג'ריקנים">
+              ג'ריקנים:
+            </label>
+            <select
+              name="jerrycans"
+              id="jerrycans"
+              title="ג'ריקנים"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="אין">אין</option>
+            </select>
           </div>
 
           <button className="add-button">
