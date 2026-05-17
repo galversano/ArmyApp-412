@@ -24,6 +24,8 @@ export default function Atroop() {
     if (data.spikes && data.spikes !== "-----") text += `  *דוקרנים:* ${data.spikes}\n`;
     if (data.triangles && data.triangles !== "-----") text += `  *משולשי אזהרה:* ${data.triangles}\n`;
     if (data.blinkers && data.blinkers !== "-----") text += `  *נצנצים:* ${data.blinkers}\n`;
+    if (data.alba_key && data.alba_key !== "-----") text += `  *מפתח שערים כסוף alba:* ${data.alba_key}\n`;
+    if (data.pelled_key && data.pelled_key !== "-----") text += `  *מפתח שערים שחור pelled:* ${data.pelled_key}\n`;
 
     window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text.trim())}`);
   }
@@ -338,6 +340,44 @@ export default function Atroop() {
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
+              <option value="אין">אין</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="alba_key" className="label" title="מפתח שערים כסוף alba">
+              מפתח שערים כסוף alba:
+            </label>
+            <select
+              name="alba_key"
+              id="alba_key"
+              title="מפתח שערים כסוף alba"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="יש">יש</option>
+              <option value="אין">אין</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="pelled_key" className="label" title="מפתח שערים שחור pelled">
+              מפתח שערים שחור pelled:
+            </label>
+            <select
+              name="pelled_key"
+              id="pelled_key"
+              title="מפתח שערים שחור pelled"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="יש">יש</option>
               <option value="אין">אין</option>
             </select>
           </div>
