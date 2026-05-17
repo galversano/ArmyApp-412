@@ -10,9 +10,44 @@
   margin: 0 auto;
 }
 
-.hamal-container h1 {
+.hamal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
   margin-bottom: 20px;
+  direction: rtl;
+}
+
+.hamal-header h1 {
+  margin-bottom: 0;
   font-size: 24px;
+}
+
+.paste-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.paste-btn:hover {
+  background: #6b7a43;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.paste-btn:active {
+  transform: translateY(0);
 }
 
 .hamal-form {

@@ -1,9 +1,26 @@
 import React, { useState } from "react";
-import { FaWhatsapp, FaPlus, FaTrash } from "react-icons/fa";
+import { FaWhatsapp, FaPlus, FaTrash, FaPaste } from "react-icons/fa";
 import "./Hamal.css";
 
 export default function Hamal() {
+  const [formData, setFormData] = useState({
+    date: new Date().toLocaleDateString("he-IL"),
+    outgoing: "",
+    incoming: "",
+    shift: "",
+    recent_events: "",
+    additional_forces: "",
+    logistics: "",
+    intelligence: "",
+    missions: ""
+  });
+
   const [checkpostsList, setCheckpostsList] = useState([{ force: "", location: "", hours: "", pairings: "" }]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const addCheckpostRow = () => {
     setCheckpostsList([...checkpostsList, { force: "", location: "", hours: "", pairings: "" }]);
@@ -24,8 +41,70 @@ export default function Hamal() {
     setCheckpostsList(updated);
   };
 
-  function sendHamalWhatsApp(formData) {
-    const data = Object.fromEntries(formData);
+  const handlePaste = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (!text) return;
+
+      const newFormData = { ...formData };
+      let newCheckposts = [];
+
+      // Extract single-line fields
+      const extractLine = (label) => {
+        const regex = new RegExp(`\\*${label}:\\*\\s*(.*)`);
+        const match = text.match(regex);
+        return match ? match[1].trim() : "";
+      };
+
+      newFormData.date = extractLine("תאריך") || newFormData.date;
+      newFormData.outgoing = extractLine("יוצא");
+      newFormData.incoming = extractLine("נכנס");
+      newFormData.shift = extractLine("משמרת");
+
+      // Extract multi-line fields
+      const extractMultiline = (label) => {
+        const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`\\*${escapedLabel}:\\*\\n([\\s\\S]*?)(?=\\n\\*|$)`);
+        const match = text.match(regex);
+        return match ? match[1].trim() : "";
+      };
+
+      newFormData.recent_events = extractMultiline("אירועים אחרונים ");
+      newFormData.additional_forces = extractMultiline("כוחות נוספים ");
+      newFormData.logistics = extractMultiline("עבודות ולוגיסטיקה בגזרה");
+      newFormData.intelligence = extractMultiline("מודיעין והתרעות");
+      newFormData.missions = extractMultiline("משימות");
+
+      // Extract checkposts
+      const checkpostsText = extractMultiline("צקפוסטים וצימודים במשמרת");
+      if (checkpostsText) {
+        const lines = checkpostsText.split('\n');
+        newCheckposts = lines.map(line => {
+          const parts = line.split(';');
+          return {
+            force: parts[0] || "",
+            location: parts[1] || "",
+            hours: parts[2] || "",
+            pairings: parts[3] || ""
+          };
+        });
+      }
+
+      setFormData(newFormData);
+      if (newCheckposts.length > 0) {
+        setCheckpostsList(newCheckposts);
+      }
+
+      alert("הנתונים הודבקו בהצלחה!");
+    } catch (error) {
+      console.error("Failed to read clipboard text: ", error);
+      alert("שגיאה בקריאת הנתונים מהלוח. אנא ודא שהעתקת טקסט תקין ושאישרת גישה ללוח.");
+    }
+  };
+
+  function sendHamalWhatsApp(e) {
+    e.preventDefault();
+    const data = formData;
     
     let text = `*דיווח חמ"ל:*\n`;
     if (data.date) text += `*תאריך:* ${data.date}\n`;
@@ -54,8 +133,13 @@ export default function Hamal() {
 
   return (
     <section className="troop-container hamal-container">
-      <h1>חמ"ל</h1>
-      <form action={sendHamalWhatsApp} className="hamal-form">
+      <div className="hamal-header">
+        <h1>חמ"ל</h1>
+        <button type="button" onClick={handlePaste} className="paste-btn" title="הדבק דיווח קודם">
+          <FaPaste /> הדבק נתונים
+        </button>
+      </div>
+      <form onSubmit={sendHamalWhatsApp} className="hamal-form">
         <div className="input-container">
           <label htmlFor="date" className="label">תאריך:</label>
           <input
@@ -64,22 +148,23 @@ export default function Hamal() {
             id="date"
             className="input-field"
             required
-            defaultValue={new Date().toLocaleDateString("he-IL")}
+            value={formData.date}
+            onChange={handleChange}
             placeholder="הזן תאריך"
           />
         </div>
         <div className="input-container">
           <label htmlFor="outgoing" className="label">יוצא:</label>
-          <input type="text" name="outgoing" id="outgoing" className="input-field" required placeholder="מי היוצא?" />
+          <input type="text" name="outgoing" id="outgoing" className="input-field" required placeholder="מי היוצא?" value={formData.outgoing} onChange={handleChange} />
         </div>
         <div className="input-container">
           <label htmlFor="incoming" className="label">נכנס:</label>
-          <input type="text" name="incoming" id="incoming" className="input-field" required placeholder="מי הנכנס?" />
+          <input type="text" name="incoming" id="incoming" className="input-field" required placeholder="מי הנכנס?" value={formData.incoming} onChange={handleChange} />
         </div>
 
         <div className="input-container">
           <label htmlFor="shift" className="label">משמרת:</label>
-          <select name="shift" id="shift" className="input-field" required>
+          <select name="shift" id="shift" className="input-field" required value={formData.shift} onChange={handleChange}>
             <option value="" hidden>בחר משמרת</option>
             <option value="בוקר">בוקר</option>
             <option value="צהריים">צהריים</option>
@@ -90,27 +175,27 @@ export default function Hamal() {
 
         <div className="input-container">
           <label htmlFor="recent_events" className="label">אירועים אחרונים גזרה:</label>
-          <textarea name="recent_events" id="recent_events" className="textarea-field" placeholder="תאר אירועים..." />
+          <textarea name="recent_events" id="recent_events" className="textarea-field" placeholder="תאר אירועים..." value={formData.recent_events} onChange={handleChange} />
         </div>
 
         <div className="input-container">
           <label htmlFor="additional_forces" className="label">כוחות נוספים בגזרה:</label>
-          <textarea name="additional_forces" id="additional_forces" className="textarea-field" placeholder="פרט כוחות נוספים..." />
+          <textarea name="additional_forces" id="additional_forces" className="textarea-field" placeholder="פרט כוחות נוספים..." value={formData.additional_forces} onChange={handleChange} />
         </div>
 
         <div className="input-container">
           <label htmlFor="logistics" className="label">עבודות ולוגיסטיקה בגזרה:</label>
-          <textarea name="logistics" id="logistics" className="textarea-field" placeholder="לוגיסטיקה ועבודה..." />
+          <textarea name="logistics" id="logistics" className="textarea-field" placeholder="לוגיסטיקה ועבודה..." value={formData.logistics} onChange={handleChange} />
         </div>
 
         <div className="input-container">
           <label htmlFor="intelligence" className="label">מודיעין והתרעות:</label>
-          <textarea name="intelligence" id="intelligence" className="textarea-field" placeholder="התרעות מודיעין..." />
+          <textarea name="intelligence" id="intelligence" className="textarea-field" placeholder="התרעות מודיעין..." value={formData.intelligence} onChange={handleChange} />
         </div>
 
         <div className="input-container">
           <label htmlFor="missions" className="label">משימות:</label>
-          <textarea name="missions" id="missions" className="textarea-field" placeholder="פירוט משימות..." />
+          <textarea name="missions" id="missions" className="textarea-field" placeholder="פירוט משימות..." value={formData.missions} onChange={handleChange} />
         </div>
 
         <div className="checkposts-subsection">
@@ -155,7 +240,7 @@ export default function Hamal() {
           </button>
         </div>
 
-        <button className="add-button">
+        <button type="submit" className="add-button">
           שלח בוואטסאפ
           <FaWhatsapp />
         </button>
