@@ -14,6 +14,7 @@ export default function Atroop() {
     if (data.ringo && data.ringo !== "-----") text += `  *צ' רינגו:* ${data.ringo}\n`;
     if (data.lionnet && data.lionnet !== "-----") text += `  *צ' ליונט 1:* ${data.lionnet}\n`;
     if (data.lionet2 && data.lionet2 !== "-----") text += `  *צ' ליונט 2:* ${data.lionet2}\n`;
+    if (data.mk && data.mk !== "-----") text += `  *צ' מ.ק:* ${data.mk}\n`;
     if (data.gas_maducha) text += `  *גז מדוכה:* ${data.gas_maducha}\n`;
     if (data.pctol_gas) text += `  *פצטול גז:* ${data.pctol_gas}\n`;
     if (data.helem) text += `  *הלם:* ${data.helem}\n`;
@@ -164,6 +165,25 @@ export default function Atroop() {
               <option value="2134">2134</option>
               <option value="1701">1701</option>
               <option value="אין ליונט">אין ליונט</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="mk" className="label" title="בחירת מ.ק">
+              צ' מ.ק:
+            </label>
+            <select
+              name="mk"
+              id="mk"
+              title="בחירת מ.ק"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="22494">22494</option>
+              <option value="אין">אין</option>
             </select>
           </div>
 
