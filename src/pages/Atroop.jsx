@@ -21,6 +21,9 @@ export default function Atroop() {
     if (data.rubber) text += `  *גומי:* ${data.rubber}\n`;
     if (data.stretcher && data.stretcher !== "-----") text += `  *אלונקה:* ${data.stretcher}\n`;
     if (data.jerrycans && data.jerrycans !== "-----") text += `  *ג'ריקנים:* ${data.jerrycans}\n`;
+    if (data.spikes && data.spikes !== "-----") text += `  *דוקרנים:* ${data.spikes}\n`;
+    if (data.triangles && data.triangles !== "-----") text += `  *משולשי אזהרה:* ${data.triangles}\n`;
+    if (data.blinkers && data.blinkers !== "-----") text += `  *נצנצים:* ${data.blinkers}\n`;
 
     window.open(`https://wa.me/972529027054?text=${encodeURIComponent(text.trim())}`);
   }
@@ -271,6 +274,70 @@ export default function Atroop() {
               </option>
               <option value="1">1</option>
               <option value="2">2</option>
+              <option value="אין">אין</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="spikes" className="label" title="דוקרנים">
+              דוקרנים:
+            </label>
+            <select
+              name="spikes"
+              id="spikes"
+              title="דוקרנים"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="אין">אין</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="triangles" className="label" title="משולשי אזהרה">
+              משולשי אזהרה:
+            </label>
+            <select
+              name="triangles"
+              id="triangles"
+              title="משולשי אזהרה"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="אין">אין</option>
+            </select>
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="blinkers" className="label" title="נצנצים">
+              נצנצים:
+            </label>
+            <select
+              name="blinkers"
+              id="blinkers"
+              title="נצנצים"
+              className="input-field"
+              required
+            >
+              <option value="" hidden>
+                -----
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
               <option value="אין">אין</option>
             </select>
           </div>
