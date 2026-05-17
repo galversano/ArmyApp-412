@@ -5,7 +5,7 @@ import React from "react";
 export default function Atroop() {
   function sendSection1WhatsApp(formData) {
     const data = Object.fromEntries(formData);
-    
+
     let text = `*סוללה א - כוחות:*\n`;
     if (data.name) text += `  *שם המפקד:* ${data.name}\n`;
     if (data.force) text += `  *כוח:* ${data.force}\n`;
@@ -14,7 +14,8 @@ export default function Atroop() {
     if (data.ringo && data.ringo !== "-----") text += `  *צ' רינגו:* ${data.ringo}\n`;
     if (data.lionnet && data.lionnet !== "-----") text += `  *צ' ליונט 1:* ${data.lionnet}\n`;
     if (data.lionet2 && data.lionet2 !== "-----") text += `  *צ' ליונט 2:* ${data.lionet2}\n`;
-    if (data.gas) text += `  *גז:* ${data.gas}\n`;
+    if (data.gas_maduga) text += `  *גז מדוגה:* ${data.gas_maduga}\n`;
+    if (data.pctol_gas) text += `  *פצטול גז:* ${data.pctol_gas}\n`;
     if (data.helem) text += `  *הלם:* ${data.helem}\n`;
     if (data.light) text += `  *תאורה:* ${data.light}\n`;
     if (data.rubber) text += `  *גומי:* ${data.rubber}\n`;
@@ -73,11 +74,6 @@ export default function Atroop() {
               <option value="" hidden>
                 -----
               </option>
-              <option value="61404">61404</option>
-              <option value="111963">111963</option>
-              <option value="2036639">2036639</option>
-              <option value="941101">941101</option>
-              <option value="112345">112345</option>
               <option value="08043928">08043928</option>
               <option value="02036341">02036341</option>
               <option value="111906">111906</option>
@@ -98,11 +94,6 @@ export default function Atroop() {
               <option value="" hidden>
                 -----
               </option>
-              <option value="971201146">971201146</option>
-              <option value="97120032">97120032</option>
-              <option value="98070383">98070383</option>
-              <option value="97110796">97110796</option>
-              <option value="97120032">97110796</option>
               <option value="09043995">09043995</option>
               <option value="09043842">09043842</option>
               <option value="09043331">09043331</option>
@@ -170,14 +161,29 @@ export default function Atroop() {
           </div>
 
           <div className="input-container">
-            <label htmlFor="gas" className="label" title="רימון גז">
-              רימון גז:
+            <label htmlFor="gas_maduga" className="label" title="גז מדוגה">
+              גז מדוגה:
             </label>
             <input
               type="text"
-              name="gas"
-              title="רימון גז"
-              id="gas"
+              name="gas_maduga"
+              title="גז מדוגה"
+              id="gas_maduga"
+              placeholder=""
+              className="input-field"
+              required
+            />
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="pctol_gas" className="label" title="פצטול גז">
+              פצטול גז:
+            </label>
+            <input
+              type="text"
+              name="pctol_gas"
+              title="פצטול גז"
+              id="pctol_gas"
               placeholder=""
               className="input-field"
               required
